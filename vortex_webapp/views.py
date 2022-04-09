@@ -33,5 +33,4 @@ def predict(request):
     parameters['total_time_steps'] = request.data.get('total_time_steps')
     result = models.predict_model(test_case,model,parameters)
     json_output = json.dumps({"output" : result})
-    # print(result)
     return HttpResponse(json_output,content_type ="application/json")
